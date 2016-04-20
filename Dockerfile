@@ -31,7 +31,7 @@ ENV HADOOP_COMMON_HOME /usr/local/hadoop
 ENV HADOOP_HDFS_HOME /usr/local/hadoop 
 ENV HADOOP_LOG_DIR /usr/local/hadoop/logs
 ENV JAVA_HOME /usr
-RUN export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin
+ENV PATH $PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin
 
 RUN mkdir -p /usr/local/hadoop/logs
 
