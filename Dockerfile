@@ -36,5 +36,3 @@ ENV PATH $PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin
 RUN mkdir -p /usr/local/hadoop/logs
 
 WORKDIR /usr/local/spark
-
-
