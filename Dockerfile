@@ -3,7 +3,7 @@ MAINTAINER Ross Hendry "rhendry@googlemail.com"
 
 RUN echo "@testing http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 
-RUN apk add --update openjdk8-jre curl bash procps openssh java-snappy@testing supervisor rsync
+RUN apk add --update openjdk8-jre curl bash procps openssh java-snappy@testing supervisor rsync libc6-compat
 RUN mkdir -p ~root/.ssh /var/log/supervisor && chmod 700 ~root/.ssh/ && \
     echo -e "Port 22\n" >> /etc/ssh/sshd_config && \
     cp -a /etc/ssh /etc/ssh.cache && \
@@ -23,7 +23,7 @@ RUN  echo -e "StrictHostKeyChecking no\n" >> /etc/ssh/ssh_config
 RUN curl -s http://www-eu.apache.org/dist/hadoop/common/hadoop-2.6.4/hadoop-2.6.4.tar.gz | tar -xz -C /usr/local && \
   cd /usr/local/ && \
   ln -s hadoop-2.6.4 hadoop
-
+  
 ENV HADOOP_HOME /usr/local/hadoop
 ENV HADOOP_CONF_DIR /usr/local/hadoop/etc/hadoop
 ENV HADOOP_MAPRED_HOME /usr/local/hadoop
