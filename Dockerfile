@@ -1,5 +1,4 @@
 FROM alpine:3.3
-MAINTAINER Ross Hendry "rhendry@googlemail.com"
 
 RUN echo "@testing http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 
